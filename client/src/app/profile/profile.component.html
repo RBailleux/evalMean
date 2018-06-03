@@ -1,0 +1,15 @@
+<header>
+  <h1>Hello {{ details?.firstname }}</h1>
+  <p>You have {{timeToPlay}} seconds to tap. Ready? Steady? Tap!</p>
+  <div>
+    <a class="btn" routerLink="/tap">Scores</a>
+    <a class="btn" (click)="auth.logout()">Logout</a>
+  </div>
+</header>
+<div class="row">
+  <img src="assets/tapOff.png" [hidden]="!scoreIsOdd" (click)="tapped()">
+  <img src="assets/tapOn.png" [hidden]="scoreIsOdd" (click)="tapped()">
+  <div class="col-md-12" style="border:1px solid black; height:60px; padding:0">
+    <div class="timer"[style.width.%]="timerWidth" style="background-color: black; height:100%;"></div>
+  </div>
+</div>
